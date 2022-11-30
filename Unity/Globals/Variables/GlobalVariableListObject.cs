@@ -1,7 +1,6 @@
-namespace Morpeh.Globals {
+namespace Scellecs.Morpeh.Globals.Variables {
     using System;
     using System.Collections.Generic;
-    using Scellecs.Morpeh;
     using Unity.IL2CPP.CompilerServices;
     using UnityEngine;
     using Object = UnityEngine.Object;

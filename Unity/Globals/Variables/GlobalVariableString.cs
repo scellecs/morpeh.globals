@@ -1,5 +1,4 @@
-namespace Morpeh.Globals {
-    using Scellecs.Morpeh;
+namespace Scellecs.Morpeh.Globals.Variables {
     using Unity.IL2CPP.CompilerServices;
     using UnityEngine;
 

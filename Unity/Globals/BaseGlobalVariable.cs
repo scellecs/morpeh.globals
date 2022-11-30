@@ -1,11 +1,11 @@
-﻿namespace Morpeh.Globals {
+﻿namespace Scellecs.Morpeh.Globals {
     using System;
-    using JetBrains.Annotations;
     using Scellecs.Morpeh;
-    using UnityEditor;
     using UnityEngine;
+    
 #if UNITY_EDITOR && ODIN_INSPECTOR
     using Sirenix.OdinInspector;
+    using UnityEditor;
 #endif
 
     public abstract class DataWrapper {
