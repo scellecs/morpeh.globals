@@ -16,7 +16,7 @@
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
     public abstract class BaseSingleton : ScriptableObject {
         [SerializeField]
-#if ODIN_INSPECTOR
+#if UNITY_EDITOR && ODIN_INSPECTOR
         [ReadOnly]
 #endif
         protected int internalEntityID = -1;
