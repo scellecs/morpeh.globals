@@ -135,7 +135,7 @@ namespace Scellecs.Morpeh.Globals {
         public void Initialize(World world) {
             var sg = world.CreateSystemsGroup();
             sg.AddSystem(new ECS.ProcessEventsSystem());
-            world.AddInternalSystemsGroup(0, sg);
+            world.AddPluginSystemsGroup(sg);
         }
     }
 }

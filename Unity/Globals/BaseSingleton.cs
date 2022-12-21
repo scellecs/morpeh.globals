@@ -5,10 +5,12 @@
     using Unity.IL2CPP.CompilerServices;
     using UnityEngine;
     
-#if UNITY_EDITOR && ODIN_INSPECTOR
-    using Sirenix.OdinInspector;
+#if UNITY_EDITOR
     using UnityEditor;
     using Scellecs.Morpeh.Editor;
+#endif
+#if UNITY_EDITOR && ODIN_INSPECTOR
+    using Sirenix.OdinInspector;
 #endif
 
     [Il2CppSetOption(Option.NullChecks, false)]

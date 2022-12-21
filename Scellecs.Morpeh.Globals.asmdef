@@ -1,5 +1,6 @@
 {
     "name": "Scellecs.Morpeh.Globals",
+    "rootNamespace": "",
     "references": [
         "GUID:3377deebfb0acde45876d12c6e3d27cc"
     ],
@@ -9,7 +10,9 @@
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
+    "defineConstraints": [
+        "UNITY_2020_1_OR_NEWER"
+    ],
     "versionDefines": [],
     "noEngineReferences": false
 }
