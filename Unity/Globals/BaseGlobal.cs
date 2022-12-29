@@ -1,17 +1,10 @@
-namespace Morpeh.Globals {
+namespace Scellecs.Morpeh.Globals {
     using System;
     using ECS;
-    using JetBrains.Annotations;
-    using Scellecs.Morpeh;
+    using Morpeh;
     using Unity.IL2CPP.CompilerServices;
-#if ODIN_INSPECTOR
-    using Sirenix.OdinInspector;
-#endif
-#if UNITY_EDITOR
-    using UnityEditor;
-#endif
     using UnityEngine;
-    
+
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]

@@ -1,11 +1,10 @@
-namespace Morpeh.Globals {
-    using System.Collections.Generic;
-    using UnityEngine;
+namespace Scellecs.Morpeh.Globals.Variables {
     using System;
+    using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
-    using Scellecs.Morpeh;
     using Unity.IL2CPP.CompilerServices;
+    using UnityEngine;
 
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]

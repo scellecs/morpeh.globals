@@ -4,15 +4,13 @@
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Scellecs.Morpeh.Native")]
 [assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Scellecs.Morpeh.Workaround")]
 
-namespace Morpeh.Globals {
+namespace Scellecs.Morpeh.Globals {
+    using System;
+    using System.Collections.Generic;
     using Scellecs.Morpeh;
+    using Scellecs.Morpeh.Collections;
     using UnityEngine.Scripting;
     namespace ECS {
-        using System;
-        using System.Collections.Generic;
-        using Scellecs.Morpeh;
-        using Scellecs.Morpeh.Collections;
-        using UnityEngine;
 
         [Serializable]
         public struct GlobalEventMarker : IComponent {
@@ -137,7 +135,7 @@ namespace Morpeh.Globals {
         public void Initialize(World world) {
             var sg = world.CreateSystemsGroup();
             sg.AddSystem(new ECS.ProcessEventsSystem());
-            world.AddInternalSystemsGroup(0, sg);
+            world.AddPluginSystemsGroup(sg);
         }
     }
 }

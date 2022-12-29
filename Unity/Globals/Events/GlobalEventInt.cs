@@ -1,6 +1,5 @@
-namespace Morpeh.Globals {
+namespace Scellecs.Morpeh.Globals.Events {
     using System.Globalization;
-    using Scellecs.Morpeh;
     using Unity.IL2CPP.CompilerServices;
     using UnityEngine;
 

@@ -1,8 +1,6 @@
-﻿namespace Morpeh {
+﻿namespace Scellecs.Morpeh.Systems {
     using System.Collections.Generic;
     using Globals;
-    using Scellecs.Morpeh;
-    using Scellecs.Morpeh.Systems;
     using Unity.IL2CPP.CompilerServices;
 #if UNITY_EDITOR && ODIN_INSPECTOR
     using Sirenix.OdinInspector;

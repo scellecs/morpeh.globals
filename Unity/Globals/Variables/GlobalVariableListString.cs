@@ -1,9 +1,8 @@
-namespace Morpeh.Globals {
-    using System.Collections.Generic;
-    using UnityEngine;
+namespace Scellecs.Morpeh.Globals.Variables {
     using System;
-    using Scellecs.Morpeh;
+    using System.Collections.Generic;
     using Unity.IL2CPP.CompilerServices;
+    using UnityEngine;
 
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]

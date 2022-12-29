@@ -1,23 +1,24 @@
-﻿namespace Morpeh.Globals {
+﻿namespace Scellecs.Morpeh.Globals {
     using System;
     using JetBrains.Annotations;
     using Scellecs.Morpeh;
     using Unity.IL2CPP.CompilerServices;
-#if ODIN_INSPECTOR
-    using Sirenix.OdinInspector;
-#endif
+    using UnityEngine;
+    
 #if UNITY_EDITOR
     using UnityEditor;
     using Scellecs.Morpeh.Editor;
 #endif
-    using UnityEngine;
+#if UNITY_EDITOR && ODIN_INSPECTOR
+    using Sirenix.OdinInspector;
+#endif
 
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
     public abstract class BaseSingleton : ScriptableObject {
         [SerializeField]
-#if ODIN_INSPECTOR
+#if UNITY_EDITOR && ODIN_INSPECTOR
         [ReadOnly]
 #endif
         protected int internalEntityID = -1;

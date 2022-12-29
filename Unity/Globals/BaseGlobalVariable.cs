@@ -1,9 +1,10 @@
-﻿namespace Morpeh.Globals {
+﻿namespace Scellecs.Morpeh.Globals {
     using System;
-    using JetBrains.Annotations;
-    using Scellecs.Morpeh;
-    using UnityEditor;
     using UnityEngine;
+    
+#if UNITY_EDITOR
+    using UnityEditor;
+#endif
 #if UNITY_EDITOR && ODIN_INSPECTOR
     using Sirenix.OdinInspector;
 #endif

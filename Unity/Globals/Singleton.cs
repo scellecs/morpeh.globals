@@ -1,11 +1,13 @@
-﻿namespace Morpeh.Globals {
+﻿namespace Scellecs.Morpeh.Globals {
     using System;
     using Scellecs.Morpeh;
     using Unity.IL2CPP.CompilerServices;
+    using UnityEngine;
+    
 #if UNITY_EDITOR && ODIN_INSPECTOR
     using Sirenix.OdinInspector;
+    using UnityEditor;
 #endif
-    using UnityEngine;
 
     [Il2CppSetOption(Option.NullChecks, false)]
     [Il2CppSetOption(Option.ArrayBoundsChecks, false)]
