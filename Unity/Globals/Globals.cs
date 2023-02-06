@@ -9,6 +9,7 @@ namespace Scellecs.Morpeh.Globals {
     using System.Collections.Generic;
     using Scellecs.Morpeh;
     using Scellecs.Morpeh.Collections;
+    using UnityEngine;
     using UnityEngine.Scripting;
     namespace ECS {
 
@@ -126,6 +127,12 @@ namespace Scellecs.Morpeh.Globals {
 
     [Preserve]
     internal sealed class GlobalsWorldPlugin : IWorldPlugin {
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
+        public static void GlobalInit() {
+            WorldExtensions.AddWorldPlugin(new GlobalsWorldPlugin());
+        }
+        
         [Preserve]
         public GlobalsWorldPlugin() {
             
