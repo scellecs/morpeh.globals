@@ -125,24 +125,21 @@ namespace Scellecs.Morpeh.Globals {
         }
     }
 
-    [Preserve]
     internal sealed class GlobalsWorldPlugin : IWorldPlugin {
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        public static void GlobalInit() {
+        public static void RuntimeInitialize() {
             WorldExtensions.AddWorldPlugin(new GlobalsWorldPlugin());
         }
         
-        [Preserve]
-        public GlobalsWorldPlugin() {
-            
-        }
-        
-        [Preserve]
         public void Initialize(World world) {
             var sg = world.CreateSystemsGroup();
             sg.AddSystem(new ECS.ProcessEventsSystem());
             world.AddPluginSystemsGroup(sg);
+        }
+        
+        public void Deinitialize(World world) {
+            
         }
     }
 }
