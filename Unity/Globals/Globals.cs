@@ -128,7 +128,7 @@ namespace Scellecs.Morpeh.Globals {
     [Preserve]
     internal sealed class GlobalsWorldPlugin : IWorldPlugin {
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
         public static void GlobalInit() {
             WorldExtensions.AddWorldPlugin(new GlobalsWorldPlugin());
         }
