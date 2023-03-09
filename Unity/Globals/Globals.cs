@@ -46,8 +46,8 @@ namespace Scellecs.Morpeh.Globals {
                 initialized.Set(this.worldId);
                 
                 var common = world.Filter.With<GlobalEventMarker>().With<GlobalEventComponent<T>>();
-                this.filterPublished = common.With<GlobalEventPublished>().Without<GlobalEventNextFrame>();
-                this.filterNextFrame = common.With<GlobalEventNextFrame>();
+                this.filterPublished = common.With<GlobalEventPublished>().Without<GlobalEventNextFrame>().Build();
+                this.filterNextFrame = common.With<GlobalEventNextFrame>().Build();
 
                 this.eventsCache    = world.GetStash<GlobalEventComponent<T>>();
                 this.publishedCache = world.GetStash<GlobalEventPublished>();
