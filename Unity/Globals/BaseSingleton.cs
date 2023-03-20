@@ -8,8 +8,6 @@
 #if UNITY_EDITOR
     using UnityEditor;
     using Scellecs.Morpeh.Editor;
-#endif
-#if UNITY_EDITOR && ODIN_INSPECTOR
     using Sirenix.OdinInspector;
 #endif
 
@@ -18,18 +16,22 @@
     [Il2CppSetOption(Option.DivideByZeroChecks, false)]
     public abstract class BaseSingleton : ScriptableObject {
         [SerializeField]
-#if UNITY_EDITOR && ODIN_INSPECTOR
+#if UNITY_EDITOR
         [ReadOnly]
 #endif
         protected int internalEntityID = -1;
 
         protected Entity internalEntity;
 
-#if UNITY_EDITOR && ODIN_INSPECTOR
+#if UNITY_EDITOR
         [PropertyOrder(100)]
         [ShowInInspector]
+        [InlineProperty]
+        [HideReferenceObjectPicker]
+        [HideLabel]
+        [Title("","Debug Info", HorizontalLine = true)]
         [Space]
-        private EntityViewerWithHeader entityViewer = new EntityViewerWithHeader();
+        private EntityViewer entityViewer = new EntityViewer();
 #endif
 
         [CanBeNull]
@@ -60,8 +62,8 @@
 
         protected virtual void OnEnable() {
             this.internalEntity = null;
-#if UNITY_EDITOR && ODIN_INSPECTOR
-            this.entityViewer = new EntityViewerWithHeader {getter = () => this.internalEntity};
+#if UNITY_EDITOR
+            this.entityViewer = new EntityViewer {getter = () => this.internalEntity};
 #endif
 #if UNITY_EDITOR
             EditorApplication.playModeStateChanged += this.OnEditorApplicationOnplayModeStateChanged;
