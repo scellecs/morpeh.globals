@@ -88,7 +88,8 @@
                 var world = World.Default;
                 var cache = world.GetStash<SingletonMarker>();
                 
-                this.internalEntity = world.CreateEntity(out this.internalEntityID);
+                this.internalEntity = world.CreateEntity();
+                this.internalEntityID = this.internalEntity.ID.id;
                 cache.Add(this.internalEntity);
                 
                 return true;
