@@ -4,15 +4,20 @@
 ## 📖 How To Install
 ### Unity Engine
 
-Minimal Unity Version is 2019.4.*  
-Require [Git](https://git-scm.com/) + [Git LFS](https://git-lfs.github.com/) for installing package.  
-Currently require [Odin Inspector](https://assetstore.unity.com/packages/tools/utilities/odin-inspector-and-serializer-89041) for drawing in inspector.
+Minimal Unity Version is 2020.3.*  
+Require [Git](https://git-scm.com/) for installing package.  
+Require [Tri Inspector](https://github.com/codewriter-packages/Tri-Inspector) for drawing in inspector.
 
-Open Unity Package Manager and add Morpeh Globals URL
+<details>
+    <summary>Open Unity Package Manager and add Morpeh URL.  </summary>
 
-&nbsp;&nbsp;&nbsp;&nbsp;⭐ Main: https://github.com/scellecs/morpeh.globals.git  
-&nbsp;&nbsp;&nbsp;&nbsp;🚧 Dev:  https://github.com/scellecs/morpeh.globals.git#develop  
-&nbsp;&nbsp;&nbsp;&nbsp;🏷️ Tag:  https://github.com/scellecs/morpeh.globals.git#2022.2.0  
+![installation_step1.png](Gifs~/installation_step1.png)  
+![installation_step2.png](Gifs~/installation_step2.png)
+</details>
+
+&nbsp;&nbsp;&nbsp;&nbsp;⭐ Master: https://github.com/scellecs/morpeh.git  
+&nbsp;&nbsp;&nbsp;&nbsp;🚧 Stage:  https://github.com/scellecs/morpeh.git#stage-2023.1  
+&nbsp;&nbsp;&nbsp;&nbsp;🏷️ Tag:  https://github.com/scellecs/morpeh.git#2023.1.0
 
 ## 📘 Singletons and Globals Assets. Event system.
 There is an execution order in the ECS pattern, so we cannot use standard delegates or events, they will break it.
