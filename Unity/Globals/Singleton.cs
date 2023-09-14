@@ -4,7 +4,7 @@
     using Unity.IL2CPP.CompilerServices;
     using UnityEngine;
     
-#if UNITY_EDITOR && ODIN_INSPECTOR
+#if UNITY_EDITOR
     using Sirenix.OdinInspector;
     using UnityEditor;
 #endif
@@ -16,12 +16,12 @@
     public class Singleton : BaseSingleton {
         [Space]
         [SerializeReference]
-#if UNITY_EDITOR && ODIN_INSPECTOR
+#if UNITY_EDITOR
         [HideIf(nameof(ShowSerializedComponents))]
 #endif
         public IComponent[] serializedComponents = Array.Empty<IComponent>();
 
-#if UNITY_EDITOR && ODIN_INSPECTOR
+#if UNITY_EDITOR
         private bool ShowSerializedComponents => this.internalEntityID > -1;
 #endif
 

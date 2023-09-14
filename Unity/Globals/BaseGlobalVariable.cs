@@ -5,7 +5,7 @@
 #if UNITY_EDITOR
     using UnityEditor;
 #endif
-#if UNITY_EDITOR && ODIN_INSPECTOR
+#if UNITY_EDITOR
     using Sirenix.OdinInspector;
 #endif
 
@@ -21,10 +21,9 @@
         [Space]
         [Header("Runtime Data")]
         [SerializeField]
-#if UNITY_EDITOR && ODIN_INSPECTOR
+#if UNITY_EDITOR
         [PropertyOrder(10)]
         [OnValueChanged(nameof(OnChange))]
-        [DelayedProperty]
         [HideLabel]
 #endif
         protected TData value;
@@ -32,8 +31,7 @@
         [SerializeField]
         private string defaultSerializedValue;
         private const string COMMON_KEY = "MORPEH__GLOBALS_VARIABLES_";
-#if UNITY_EDITOR && ODIN_INSPECTOR
-        [HideInInlineEditors]
+#if UNITY_EDITOR
         [PropertyOrder(1)]
         [ShowIf("@" + nameof(AutoSave) + " && " + nameof(CanBeAutoSaved))]
 #endif

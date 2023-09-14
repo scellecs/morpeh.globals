@@ -9,6 +9,7 @@ namespace Scellecs.Morpeh.Globals {
     using System.Collections.Generic;
     using Scellecs.Morpeh;
     using Scellecs.Morpeh.Collections;
+    using UnityEngine;
     using UnityEngine.Scripting;
     namespace ECS {
 
@@ -45,8 +46,8 @@ namespace Scellecs.Morpeh.Globals {
                 initialized.Set(this.worldId);
                 
                 var common = world.Filter.With<GlobalEventMarker>().With<GlobalEventComponent<T>>();
-                this.filterPublished = common.With<GlobalEventPublished>().Without<GlobalEventNextFrame>();
-                this.filterNextFrame = common.With<GlobalEventNextFrame>();
+                this.filterPublished = common.With<GlobalEventPublished>().Without<GlobalEventNextFrame>().Build();
+                this.filterNextFrame = common.With<GlobalEventNextFrame>().Build();
 
                 this.eventsCache    = world.GetStash<GlobalEventComponent<T>>();
                 this.publishedCache = world.GetStash<GlobalEventPublished>();
@@ -124,18 +125,21 @@ namespace Scellecs.Morpeh.Globals {
         }
     }
 
-    [Preserve]
     internal sealed class GlobalsWorldPlugin : IWorldPlugin {
-        [Preserve]
-        public GlobalsWorldPlugin() {
-            
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        public static void RuntimeInitialize() {
+            WorldExtensions.AddWorldPlugin(new GlobalsWorldPlugin());
         }
         
-        [Preserve]
         public void Initialize(World world) {
             var sg = world.CreateSystemsGroup();
             sg.AddSystem(new ECS.ProcessEventsSystem());
             world.AddPluginSystemsGroup(sg);
+        }
+        
+        public void Deinitialize(World world) {
+            
         }
     }
 }
